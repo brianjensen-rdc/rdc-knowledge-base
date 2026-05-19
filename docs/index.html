@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>RDC Knowledge Base</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--coral:#FF4F58;--squid:#0D1724;--wine:#7F0046;--mist:#ABDCE0;--white:#FFFFFF;--gray-100:#F3F3F3;--gray-200:#E8E8E8;--gray-500:#888888;--gray-700:#444444;--gray-900:#1A1A1A;--page-bg:#F7F6F4;--font-sans:'DM Sans',system-ui,sans-serif;--radius-md:8px;--radius-lg:12px;--radius-xl:18px;--radius-pill:999px}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--font-sans);background:var(--page-bg);color:var(--gray-900);line-height:1.6}
+.wrap{max-width:980px;margin:0 auto;padding:32px 32px 96px}
+.page-header{background:var(--squid);color:var(--white);border-radius:var(--radius-xl);padding:3rem;position:relative;overflow:hidden;margin-bottom:32px}
+.page-header::before{content:'rd';position:absolute;right:-20px;bottom:-40px;font-size:200px;font-weight:700;color:rgba(255,255,255,0.03);letter-spacing:-0.05em;line-height:1}
+.page-header .eyebrow{font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--coral);margin-bottom:8px}
+.page-header h1{font-size:36px;font-weight:600;letter-spacing:-0.02em;line-height:1.1;margin:0 0 12px 0}
+.page-header .meta{color:rgba(255,255,255,0.75);font-size:14px;line-height:1.6;max-width:680px}
+h2{font-size:20px;font-weight:600;color:var(--squid);margin:32px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--gray-200)}
+.section-eyebrow{font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--coral);margin-bottom:4px}
+.doc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin:18px 0}
+.doc-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);overflow:hidden;transition:transform .12s,box-shadow .12s;text-decoration:none;color:inherit;display:block}
+.doc-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(13,23,36,0.08)}
+.doc-card-bar{height:4px;background:var(--coral)}
+.doc-card-body{padding:20px 24px}
+.doc-card .eyebrow{font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--coral);margin-bottom:6px}
+.doc-card h3{margin:0 0 6px;font-size:17px;font-weight:600;color:var(--squid)}
+.doc-card p{margin:0;font-size:13px;color:var(--gray-500);line-height:1.5}
+.doc-card .lock{margin-top:12px;font-size:11px;font-weight:600;color:var(--gray-700);display:inline-flex;align-items:center;gap:6px}
+.doc-card .lock::before{content:'';display:inline-block;width:8px;height:8px;background:var(--coral);border-radius:50%}
+.alert{background:rgba(255,79,88,0.08);color:#C13040;border-left:3px solid var(--coral);padding:14px 18px;border-radius:var(--radius-md);font-size:14px;margin:16px 0}
+.foot{margin-top:48px;padding-top:24px;border-top:1px solid var(--gray-200);font-size:12px;color:var(--gray-500);text-align:center}
+.foot a{color:var(--gray-700);text-decoration:none}
+.foot a:hover{color:var(--coral)}
+@media (max-width:768px){.wrap{padding:16px 16px 64px}.page-header{padding:1.5rem}.page-header h1{font-size:28px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="page-header">
+  <div class="eyebrow">Red Door Collaborative</div>
+  <h1>Knowledge Base</h1>
+  <div class="meta">Project deliverables, plans, and reference materials for review. All documents below are password-protected; request the access password from Brian if you don't have it.</div>
+</div>
+<div class="section-eyebrow">Active project</div>
+<h2 style="margin-top:4px">File Taxonomy &amp; Organization</h2>
+<p style="font-size:14px;color:var(--gray-700);margin:0 0 16px">Defining RDC's file naming, folder structure, and SharePoint organization SOP. Currently in Phase 0 (foundation complete); SOP authoring next.</p>
+<div class="doc-grid">
+  <a href="file-taxonomy/plan.html" class="doc-card">
+    <div class="doc-card-bar"></div>
+    <div class="doc-card-body">
+      <div class="eyebrow">Plan</div>
+      <h3>Implementation Plan</h3>
+      <p>Phases, decisions, naming convention, folder structure examples, risks, next steps.</p>
+      <div class="lock">Password-protected</div>
+    </div>
+  </a>
+  <a href="file-taxonomy/baseline-index.html" class="doc-card">
+    <div class="doc-card-bar" style="background:var(--wine)"></div>
+    <div class="doc-card-body">
+      <div class="eyebrow">Baseline</div>
+      <h3>Baseline File Index</h3>
+      <p>Frozen pre-change snapshot of five SAMPLE SharePoint folders. 4,561 files indexed.</p>
+      <div class="lock">Password-protected</div>
+    </div>
+  </a>
+</div>
+<h2>Reference</h2>
+<div class="doc-grid">
+  <a href="rdc-design-system.html" class="doc-card">
+    <div class="doc-card-bar" style="background:var(--squid)"></div>
+    <div class="doc-card-body">
+      <div class="eyebrow">Design system</div>
+      <h3>RDC Design System</h3>
+      <p>Canonical brand source. Colors, typography, components, do/don't.</p>
+      <div class="lock" style="color:var(--gray-500)"><span style="background:#15803d;width:8px;height:8px;border-radius:50%;display:inline-block"></span>&nbsp;Open access</div>
+    </div>
+  </a>
+</div>
+<div class="alert"><strong>Access:</strong> If you receive an "incorrect password" error, double-check the password Brian shared. If problems persist, ping Brian directly.</div>
+<div class="foot">Red Door Collaborative &middot; Knowledge Base &middot; <a href="https://github.com/brianjensen-rdc/rdc-knowledge-base">View source repo</a></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Red Door Collaborative - Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --coral:#FF4F58; --squid:#0D1724; --wine:#7F0046; --mist:#ABDCE0; --white:#FFFFFF;
+  --gray-100:#F3F3F3; --gray-200:#E8E8E8; --gray-300:#D0D0D0; --gray-500:#888888; --gray-700:#444444; --gray-900:#1A1A1A;
+  --page-bg:#F7F6F4;
+  --font-sans:'DM Sans',system-ui,sans-serif; --font-mono:'DM Mono',ui-monospace,monospace;
+  --radius-sm:4px; --radius-md:8px; --radius-lg:12px; --radius-xl:18px; --radius-pill:999px;
+  --shadow-sm:0 1px 3px rgba(13,23,36,0.08);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--font-sans);background:var(--page-bg);color:var(--gray-900);line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding:32px 48px 96px}
+.page-header{background:var(--squid);color:var(--white);border-radius:var(--radius-xl);padding:3rem;position:relative;overflow:hidden;margin-bottom:32px}
+.page-header::before{content:'rd';position:absolute;right:-20px;bottom:-40px;font-size:200px;font-weight:700;color:rgba(255,255,255,0.03);letter-spacing:-0.05em;line-height:1;pointer-events:none}
+.page-header .eyebrow{font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--coral);margin-bottom:8px}
+.page-header h1{font-size:36px;font-weight:600;letter-spacing:-0.02em;line-height:1.1;margin:0 0 12px 0}
+.page-header .meta{color:rgba(255,255,255,0.75);font-size:14px;line-height:1.6;max-width:760px}
+h2{font-size:24px;font-weight:600;letter-spacing:-0.01em;color:var(--squid);margin:48px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--gray-200)}
+h3{font-size:18px;font-weight:600;color:var(--squid);margin:24px 0 8px}
+h4{font-size:14px;font-weight:600;color:var(--gray-700);margin:18px 0 6px}
+p{margin:8px 0 12px}
+code{font-family:var(--font-mono);font-size:12.5px;background:var(--gray-100);padding:1px 6px;border-radius:3px;color:var(--squid)}
+pre{font-family:var(--font-mono);font-size:12.5px;line-height:1.5;background:var(--gray-100);padding:16px 20px;border-radius:var(--radius-md);overflow:auto;border:1px solid var(--gray-200)}
+.section-eyebrow{font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--coral);margin-bottom:4px}
+.swatch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0}
+.swatch{border:1px solid var(--gray-200);border-radius:var(--radius-lg);overflow:hidden;background:var(--white)}
+.swatch-color{height:100px}
+.swatch-info{padding:12px 16px}
+.swatch-info .name{font-weight:600;font-size:14px;color:var(--squid)}
+.swatch-info .hex{font-family:var(--font-mono);font-size:12px;color:var(--gray-500);margin-top:2px}
+.swatch-info .use{font-size:12px;color:var(--gray-700);margin-top:6px;line-height:1.4}
+table{border-collapse:collapse;width:100%;margin:16px 0;font-size:13px;background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-md);overflow:hidden}
+thead th{background:var(--gray-100);font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-500);text-align:left;padding:12px 14px;border-bottom:1px solid var(--gray-200)}
+tbody td{padding:10px 14px;border-bottom:1px solid var(--gray-200);color:var(--gray-900);vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+.btn{font-family:var(--font-sans);font-size:13px;font-weight:600;padding:9px 22px;border-radius:var(--radius-pill);border:none;cursor:pointer;letter-spacing:0.01em;transition:transform 0.12s,box-shadow 0.12s;display:inline-flex;align-items:center;text-decoration:none;margin:4px 6px 4px 0}
+.btn:hover{transform:translateY(-1px);box-shadow:var(--shadow-sm)}
+.btn-primary{background:var(--coral);color:#fff}
+.btn-dark{background:var(--squid);color:#fff}
+.btn-wine{background:var(--wine);color:#fff}
+.btn-outline-coral{background:transparent;color:var(--coral);border:1.5px solid var(--coral)}
+.btn-ghost{background:transparent;color:var(--gray-500);border:1px solid var(--gray-300)}
+.badge{display:inline-flex;align-items:center;font-size:11px;font-weight:600;padding:3px 10px;border-radius:var(--radius-pill);letter-spacing:0.03em;margin:0 6px 0 0}
+.badge-coral{background:rgba(255,79,88,0.12);color:#C13040}
+.badge-mist{background:rgba(171,220,224,0.35);color:#3a7a84}
+.badge-wine{background:rgba(127,0,70,0.10);color:var(--wine)}
+.badge-success{background:#dcfce7;color:#15803d}
+.alert{padding:14px 18px;border-radius:var(--radius-md);margin:12px 0;font-size:14px}
+.alert-coral{background:rgba(255,79,88,0.08);color:#C13040;border-left:3px solid var(--coral)}
+.alert-info{background:#eff6ff;color:#1d4ed8;border-left:3px solid #2563eb}
+.alert-success{background:#f0fdf4;color:#15803d;border-left:3px solid #15803d}
+.content-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);overflow:hidden;margin:16px 0}
+.content-card-bar{height:4px;background:var(--coral)}
+.content-card-body{padding:20px 24px}
+.metric-card{background:var(--gray-100);border-radius:var(--radius-md);padding:16px 20px;display:inline-block;margin:6px 8px 6px 0;min-width:160px}
+.metric-card .label{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-500)}
+.metric-card .value{font-size:30px;font-weight:700;color:var(--squid);margin-top:4px}
+.do-dont{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+.do-dont .col{padding:16px 20px;border-radius:var(--radius-md)}
+.do-dont .do{background:#f0fdf4;border-left:3px solid #15803d}
+.do-dont .dont{background:rgba(255,79,88,0.08);border-left:3px solid var(--coral)}
+.do-dont h4{margin-top:0}
+@media (max-width:768px){.wrap{padding:16px 16px 64px}.page-header{padding:1.5rem}.page-header h1{font-size:28px}.do-dont{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="page-header">
+  <div class="eyebrow">Red Door Collaborative</div>
+  <h1>Design System</h1>
+  <div class="meta">Canonical brand source for all RDC HTML deliverables. Use this file's CSS variables and component classes for any HTML produced under the RDC banner. Last updated 2026-05-19.</div>
+</div>
+
+<h2>Color Palette</h2>
+<div class="swatch-grid">
+  <div class="swatch"><div class="swatch-color" style="background:#FF4F58"></div><div class="swatch-info"><div class="name">Coral</div><div class="hex">#FF4F58 - Pantone 186 C</div><div class="use">Primary CTA, accents, focus states, eyebrows</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#0D1724"></div><div class="swatch-info"><div class="name">Squid</div><div class="hex">#0D1724 - Pantone Black 6 C</div><div class="use">Dark surfaces, high-authority type, sidebars</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#7F0046"></div><div class="swatch-info"><div class="name">Wine</div><div class="hex">#7F0046 - Pantone 228 C</div><div class="use">Secondary brand color, logo mark background</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#ABDCE0"></div><div class="swatch-info"><div class="name">Mist</div><div class="hex">#ABDCE0 - Pantone 290 C</div><div class="use">Accent only - never primary background</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:#F7F6F4;border-bottom:1px solid #E8E8E8"></div><div class="swatch-info"><div class="name">Page Background</div><div class="hex">#F7F6F4</div><div class="use">Default page background</div></div></div>
+</div>
+
+<h3>Neutral scale (CSS vars)</h3>
+<table>
+  <thead><tr><th>Token</th><th>Hex</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td><code>--gray-100</code></td><td><code>#F3F3F3</code></td><td>Light backgrounds, metric card bg</td></tr>
+    <tr><td><code>--gray-200</code></td><td><code>#E8E8E8</code></td><td>Borders, dividers</td></tr>
+    <tr><td><code>--gray-300</code></td><td><code>#D0D0D0</code></td><td>Input borders</td></tr>
+    <tr><td><code>--gray-500</code></td><td><code>#888888</code></td><td>Muted text, labels</td></tr>
+    <tr><td><code>--gray-700</code></td><td><code>#444444</code></td><td>Body de-emphasis</td></tr>
+    <tr><td><code>--gray-900</code></td><td><code>#1A1A1A</code></td><td>Default body text</td></tr>
+  </tbody>
+</table>
+
+<h2>Typography</h2>
+<p>Primary typeface: <strong>Suisse Int'l</strong> (Swiss Typefaces). Digital fallback: <strong>Proxima Nova</strong>. Web stand-in: <strong>DM Sans</strong> via Google Fonts. Mono: <strong>DM Mono</strong>. Weights: 300, 400, 500, 600, 700. Max 3 weights per page.</p>
+
+<table>
+  <thead><tr><th>Role</th><th>Size / Weight</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>Display</td><td>48 / 700</td><td>letter-spacing -0.03em, line-height 1.05</td></tr>
+    <tr><td>H1</td><td>36 / 600</td><td>letter-spacing -0.02em</td></tr>
+    <tr><td>H2</td><td>24 / 600</td><td>letter-spacing -0.01em</td></tr>
+    <tr><td>H3</td><td>18 / 600</td><td>-</td></tr>
+    <tr><td>Body</td><td>16 / 400</td><td>line-height 1.7</td></tr>
+    <tr><td>Small</td><td>14 / 400</td><td>gray-500, line-height 1.6</td></tr>
+    <tr><td>Label</td><td>11 / 600</td><td>uppercase, letter-spacing 0.1em</td></tr>
+  </tbody>
+</table>
+<p><strong>Rules:</strong> sentence case headings only (labels excepted). No italic headings. No condensed/decorative body.</p>
+
+<h2>Components</h2>
+
+<h3>Buttons</h3>
+<p>Pill shape, 13px/600, padding 9px 22px. Hover: translateY(-1px) + shadow-sm.</p>
+<div>
+  <button class="btn btn-primary">Primary (Coral)</button>
+  <button class="btn btn-dark">Dark (Squid)</button>
+  <button class="btn btn-wine">Wine</button>
+  <button class="btn btn-outline-coral">Outline Coral</button>
+  <button class="btn btn-ghost">Ghost</button>
+</div>
+
+<h3>Badges</h3>
+<div>
+  <span class="badge badge-coral">coral</span>
+  <span class="badge badge-mist">mist</span>
+  <span class="badge badge-wine">wine</span>
+  <span class="badge badge-success">success</span>
+</div>
+
+<h3>Content card</h3>
+<div class="content-card">
+  <div class="content-card-bar"></div>
+  <div class="content-card-body">
+    <div class="section-eyebrow">Eyebrow</div>
+    <h4 style="margin:4px 0 6px 0;color:var(--squid)">Card title</h4>
+    <p style="margin:0;color:var(--gray-500);font-size:13px">Card body copy. White bg, gray-200 border, radius-lg, 4px Coral top bar.</p>
+  </div>
+</div>
+
+<h3>Alerts</h3>
+<div class="alert alert-coral"><strong>Warning:</strong> Coral alert. Use for warnings or risks.</div>
+<div class="alert alert-info"><strong>Info:</strong> Blue info alert. General informational callouts.</div>
+<div class="alert alert-success"><strong>Success:</strong> Green success alert. Confirmation or locked decisions.</div>
+
+<h2>Logo &amp; Assets</h2>
+<p>RDC logo lives in Box: <code>Red Door File Database -> Red Door Guidelines and Assets -> RDC 2025 Branding</code>. Mark min 24px digital / 0.35in print; full lockup 120px / 1.5in. Clear space = height of the "r".</p>
+
+<h2>Do &amp; Don't</h2>
+<div class="do-dont">
+  <div class="col do">
+    <h4>Do</h4>
+    <ul>
+      <li>Lead with Coral for CTAs</li>
+      <li>Use Squid for dark surfaces</li>
+      <li>Sentence case headings (labels excepted)</li>
+      <li>Use approved Box files for the logo</li>
+      <li>Candid, human, professional photography</li>
+    </ul>
+  </div>
+  <div class="col dont">
+    <h4>Don't</h4>
+    <ul>
+      <li>Use Mist as a primary background</li>
+      <li>Put Coral text on Wine (contrast fails)</li>
+      <li>Recreate or screenshot the logo</li>
+      <li>Use drop shadows on the logo</li>
+      <li>Use staged stock photography</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Usage</h2>
+<p>All HTML deliverables in this repo MUST use this design system. Copy the <code>:root</code> CSS variables and component classes. No off-brand colors without design-lead approval.</p>
+
+</div>
+</body>
+</html>
